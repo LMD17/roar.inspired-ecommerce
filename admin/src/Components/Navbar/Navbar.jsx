@@ -1,4 +1,3 @@
-import React from 'react'
 import './Navbar.css'
 import logo from'../../assets/roar_inspired_logo_whitebg_crop.png'
 import navprofile from '../../assets/icons/user.svg'

@@ -3,6 +3,7 @@ import { ShopContext } from '../Context/ShopContext'
 import './CSS/PlaceOrder.css'
 
 const PlaceOrder = () => {
+    const url = "https://roar-inspired-ecommerce-backend.onrender.com"
 
     const {getTotalCartAmount, all_products, cartItems} = useContext(ShopContext)
 
@@ -49,7 +50,7 @@ const PlaceOrder = () => {
         
         // send order data to api and get response
         let responseData
-        await fetch('http://localhost:4000/placeorder',{
+        await fetch(url + '/placeorder',{
             method: 'POST',
             headers:{
               Accept:'application/json',

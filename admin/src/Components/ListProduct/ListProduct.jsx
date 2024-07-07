@@ -3,12 +3,13 @@ import './ListProduct.css'
 import remove_icon from '../../assets/icons/trash-2.svg'
 
 const ListProduct = () => {
+  const url = "https://roar-inspired-ecommerce-backend.onrender.com"
 
   const [allproducts, setAllProducts] = useState([]);
 
   // get all products function
   const fetchInfo = async () =>{
-    await fetch('http://localhost:4000/allproducts')
+    await fetch(url + '/allproducts')
     .then((response)=>response.json())
     .then((data)=>{setAllProducts(data)});
   }
@@ -19,7 +20,7 @@ const ListProduct = () => {
 
   // remove product function
   const removeProduct = async (id)=>{
-    await fetch('http://localhost:4000/removeproduct',{
+    await fetch(url + '/removeproduct',{
       method:'POST',
       headers:{
         Accept:'application/json',
