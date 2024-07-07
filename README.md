@@ -1,6 +1,3 @@
-Sure, here's the README content in Markdown format:
-
-```markdown
 # E-commerce Website
 
 This is an E-commerce website project built using React for the frontend, Node.js for the backend, and a separate admin panel.
@@ -87,6 +84,4 @@ Follow the instructions below to set up and run the project.
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-```
 
-Feel free to copy and paste this Markdown code into your README file.
