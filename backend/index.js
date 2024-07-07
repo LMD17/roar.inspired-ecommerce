@@ -1,4 +1,5 @@
 const port = process.env.PORT || 4000;
+const url = "https://roar-inspired-ecommerce-backend.onrender.com"
 const { ObjectId } = require('mongodb');
 
 // Initialize dependencies and modules
@@ -43,7 +44,7 @@ app.use('/images', express.static('upload/images'))
 app.post("/upload", upload.single('product'), (request, response) => {
     response.json({
         success: 1,
-        image_url: `http://localhost:${port}/images/${request.file.filename}`
+        image_url: url + `/images/${request.file.filename}`
     })
 })
 
