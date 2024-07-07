@@ -13,19 +13,20 @@ const getDefaultCart = ()=>{
 }
 
 const ShopContextProvider = (props) =>{
+    const url = "https://roar-inspired-ecommerce-backend.onrender.com"
     const[all_products, setAll_Product] = useState([]);
     const [cartItems, setCartItems] = useState(getDefaultCart());
 
     // load images from database
     useEffect(()=>{
-        fetch('http://localhost:4000/allproducts')
+        fetch(url + '/allproducts')
         .then((response)=>response.json())
         .then((data)=>setAll_Product(data))
 
         // if user is logged in (has an auth-token)
         if (localStorage.getItem('auth-token')) {
             // fetch user cart data
-            fetch('http://localhost:4000/getcart',{
+            fetch(url + '/getcart',{
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -45,7 +46,7 @@ const ShopContextProvider = (props) =>{
         // Send POST request to server (/addtocart endpoint) if user is logged in
         // Check for authentication token to verify user is logged in
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addtocart',{
+            fetch(url + '/addtocart',{
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
@@ -65,7 +66,7 @@ const ShopContextProvider = (props) =>{
         // Send POST request to server (/removefromcart endpoint) if user is logged in
         // Check for authentication token to verify user is logged in
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/removefromcart',{
+            fetch(url + '/removefromcart',{
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
