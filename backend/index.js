@@ -303,7 +303,7 @@ const Orders = mongoose.model('Orders', {
 // Creating API (endpoint) for placing order in database
 app.post('/placeorder', fetchUser, async (request, response) => {
 
-    const frontend_url = "http://localhost:4000";   // frontend url
+    const frontend_url = "https://roar-inspired-ecommerce-frontend.onrender.com";   // frontend url
 
     try {
         // create new order
